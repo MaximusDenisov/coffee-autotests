@@ -6,7 +6,7 @@ import io.restassured.specification.RequestSpecification;
 
 
 public class BasicSteps {
-    private static final String host = "http://78.138.173.155:4323";
+    private static final String host = System.getProperty("host");
 
     public static Response send(String method, String endpoint, int code) throws Exception {
         RequestSpecification request = RestAssured.given().baseUri(host).basePath(endpoint);
