@@ -7,8 +7,7 @@ import org.testng.annotations.Test;
 @Slf4j
 public class HealthCheckTest {
     @Test(testName = "GetHealthCheck")
-    public void testHealthCheck() {
-        Response rs = BasicSteps.post("/coffees",200);
-        System.out.printf(rs.asPrettyString());
+    public void testHealthCheck() throws Exception {
+        BasicSteps.send("get", "/coffees", 200);
     }
 }
